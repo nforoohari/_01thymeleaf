@@ -8,10 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 
 @Controller
 @RequestMapping("/")
@@ -26,15 +24,15 @@ public class MyController {
     }
 
     @PostConstruct
-    public void loadDate()
-    {
+    public void loadDate() {
         productList = List.of(
-                new Product(1l,"fdf","dfdf",new BigDecimal("1000")),
-                new Product(2l,"fdf","dfdf",new BigDecimal("1000")),
-                new Product(3l,"fdf","dfdf",new BigDecimal("1000")),
-                new Product(3l,"fdf","dfdf",new BigDecimal("1000"))
+                new Product(1l, "spoon", "big", new BigDecimal("1000")),
+                new Product(2l, "knife", "small", new BigDecimal("1200")),
+                new Product(3l, "fork", "medium", new BigDecimal("1100")),
+                new Product(4l, "spoon", "small", new BigDecimal("800"))
         );
     }
+
     @GetMapping("products")
     public String products(Model model) {
         model.addAttribute("products", productList);

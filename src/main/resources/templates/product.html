@@ -6,16 +6,13 @@
     <link rel="stylesheet" th:href="@{/css/home.css}">
 </head>
 <body>
-
-
 <table>
     <tr>
-    <th>id</th>
-    <th>name</th>
-    <th>description</th>
-    <th>price</th>
+        <th>id</th>
+        <th>name</th>
+        <th>description</th>
+        <th>price</th>
     </tr>
-
     <tr th:each="product: ${products}">
         <th th:text="${product.getId()}"/>
         <th th:text="${product.getName()}"/>
